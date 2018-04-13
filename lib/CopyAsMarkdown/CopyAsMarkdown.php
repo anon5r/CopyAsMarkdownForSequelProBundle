@@ -33,7 +33,7 @@ class CopyAsMarkdown
         $result = [];
         $result[] = $this->createHeaderRows($columns);
         $result[] = $this->createDataRows($rows);
-        return implode("\n", $result);
+        return implode("|\n", $result);
     }
 
     protected function createHeaderRows(array $columns)
@@ -51,7 +51,7 @@ class CopyAsMarkdown
         }
         $result[] = $str;
 
-        return implode("\n", $result);
+        return implode("|\n", $result);
     }
 
     protected function calculateColumnCount(array $rows)
@@ -76,6 +76,6 @@ class CopyAsMarkdown
             }
             $result[] = $str;
         }
-        return implode("\n", $result);
+        return implode("|\n", $result) . '|';
     }
 }
